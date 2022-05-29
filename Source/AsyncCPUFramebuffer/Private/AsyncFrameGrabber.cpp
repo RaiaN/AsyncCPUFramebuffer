@@ -7,6 +7,8 @@
 #include "Widgets/SViewport.h"
 #include "Engine/GameEngine.h"
 #include "Framework/Application/SlateApplication.h"
+#include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
 
 #if WITH_EDITOR
 #include "IAssetViewport.h"
@@ -59,6 +61,14 @@ bool UAsyncFrameGrabber::GetNextFrame(TArray<FColor>& OutFrame)
     {
         NumCapturedFrames.Decrement();
     }
+
+    /*
+    // DEBUG DUMP JPEG
+    const FIntPoint Size = GetFrameResolution();
+    const FString& Filename = *(FPaths::ProjectSavedDir() / FString::Printf(TEXT("FrameGrabber_frame_%d.bmp"), NumCapturedFrames.GetValue()));
+    FFileHelper::CreateBitmap(*Filename, Size.X, Size.Y, &OutFrame[0]);
+    // ~DEBUG DUMP JPEG*/
+
     return bResult;
 }
 
