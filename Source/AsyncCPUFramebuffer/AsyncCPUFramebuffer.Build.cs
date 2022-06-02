@@ -38,7 +38,6 @@ public class AsyncCPUFramebuffer : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				"MovieSceneCapture",
 				"RHI",
 				"RenderCore"
 				// ... add private dependencies that you statically link with here ...	
