@@ -125,7 +125,7 @@ void FViewportSurfaceReader::ResolveRenderTarget(FViewportSurfaceReader* RenderT
 		GRenderTargetPool.FindFreeElement(RHICmdList, OutputDesc, ResampleTexturePooledRenderTarget, TEXT("ResampleTexture"));
 		check(ResampleTexturePooledRenderTarget);
 
-		RHICmdList.Transition(FRHITransitionInfo(ResampleTexturePooledRenderTarget->GetTargetableRHI(), ERHIAccess::Unknown, ERHIAccess::Present));
+		// RHICmdList.Transition(FRHITransitionInfo(ResampleTexturePooledRenderTarget->GetTargetableRHI(), ERHIAccess::Unknown, ERHIAccess::Present));
 
 		const FSceneRenderTargetItem& DestRenderTarget = ResampleTexturePooledRenderTarget->GetRenderTargetItem();
 
